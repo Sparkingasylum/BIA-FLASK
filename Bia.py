@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 # Global variable for site name: Used in templates to display the site name
-siteName = "BIA Exchanges"
+siteName = "BIA Opportunities" 
 # Set the site name in the app context
 @app.context_processor
 def inject_site_name():
@@ -17,7 +17,7 @@ def inject_site_name():
 @app.route('/')
 def index():
     # This defines a variable 'studentName' that will be passed to the output HTML
-    sitename = "BIA Exchanges"
+    sitename = "BIA Opportunities"
     # Render HTML with the name in a H1 tag
     return render_template('index.html', greeting="Welcome", sitename=sitename)
 
@@ -26,7 +26,7 @@ def index():
 @app.route('/about')
 def about():
     # Render HTML with the name in a H1 tag
-    return f"<h1>About BIA Exchanges!</h1><p>It is easy to create new routes</p>"
+    return render_template('about.html', title="About")
 
 
 # Run application

@@ -1,5 +1,71 @@
 /* This basic CSS file sets the background colour and text colour for the entire page */
+/* ===== Global ===== */
 body {
-    background-color: black; 	/* Background Colour */
-    color: white; 		/* Text Colour */
+    background-color: #fffdf5;   /* warm off-white, softer than pure white */
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;      /* keeps the footer at the bottom of short pages */
+}
+
+/* ===== Navbar brand: "BIA" white, "Opportunities" red ===== */
+.brand-bia {
+    color: #ffffff;
+    /* a dark outline so white text stays readable on the yellow navbar */
+    text-shadow: -1px -1px 0 #212529, 1px -1px 0 #212529,
+                 -1px 1px 0 #212529, 1px 1px 0 #212529;
+}
+
+.brand-opportunities {
+    color: #b02a37;              /* a darker red than Bootstrap's, for better contrast on yellow */
+}
+
+/* ===== Navbar links ===== */
+.navbar .nav-link {
+    color: #212529;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #b02a37;
+    text-decoration: underline;
+}
+
+/* ===== Search bar ===== */
+.navbar form[role="search"] .form-control {
+    min-width: 200px;
+}
+
+/* ===== Main content ===== */
+#main-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* ===== Job cards on the home page ===== */
+.card {
+    border: 1px solid #e0d9c0;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);   /* lifts the card when the mouse is over it */
+}
+
+/* ===== Keyboard focus, for accessibility ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #212529;
+    outline-offset: 2px;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;            /* works with the body flex above to push the footer down */
+    padding: 15px 0;
+    background-color: #212529;
+    color: #ffffff;
 }
